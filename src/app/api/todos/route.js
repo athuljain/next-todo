@@ -46,3 +46,45 @@ export async function POST(req) {
     return NextResponse.json({ error: "Failed to add todo" }, { status: 500 });
   }
 }
+
+
+export async function PATCH(req){
+  try{
+    await connectDB()
+    const {id,text,completed}=await req.json()
+
+    const updatedTodo=await Todo.findByIdAndUpdate(
+      id,
+      {
+        ...(text && {text}),...(complted !== undefined && {completed})
+      },
+      {new:true}
+    );
+
+    if(!updatedTodo)
+      return NextResponse.json({error:"TODO not found"},{status:404})
+    return NextResponse.json(updatedTodo)
+
+
+  }catch(error){
+    console.error("PATCH error",error)
+    return NextResponse.json({error:"failed to update todo"},{status:500})
+  }
+}
+
+
+
+export async function DELETE(req){
+  try{
+    await connectDB()
+    const {id}=await req.json()
+
+    const deleteTodo=await Todo.findByIdAndDelete(id)
+    if(!deleteTodo)
+      return NextResponse.json({error:"todo not found"},{status:404})
+    return NextResponse.json({message:"Todo deleted successfully"})
+  }catch(error){
+    console.error("Delete error:",error)
+    return NextResponse.json({error:"failed to delete tot"},{status:500})
+  }
+}
