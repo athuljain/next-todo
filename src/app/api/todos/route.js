@@ -79,6 +79,9 @@ export async function DELETE(req){
     await connectDB()
     const {id}=await req.json()
 
+        if (!id)
+      return NextResponse.json({ error: "Missing todo ID" }, { status: 400 });
+
     const deleteTodo=await Todo.findByIdAndDelete(id)
     if(!deleteTodo)
       return NextResponse.json({error:"todo not found"},{status:404})
