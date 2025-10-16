@@ -10,6 +10,8 @@ export default function Home() {
     const data = await res.json();
     setTodos(data);
   };
+console.log("todos:",todos);
+console.log("newTodo:",newTodo);
 
   const addTodo = async () => {
     if (!newTodo.trim()) return;
