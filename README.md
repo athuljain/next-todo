@@ -34,3 +34,30 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+
+
+
+
+
+
+
+🌀 Framer Motion animations:
+
+Smooth fade-in, slide-in, and scale effects.
+
+Animated entry and exit for each todo.
+
+🎨 Modern gradient background:
+
+from-gray-900 via-red-900 to-black gives a rich, red-tinted dark theme.
+
+💎 Glassmorphism cards:
+
+Semi-transparent containers with blur and soft borders.
+
+🚀 Hover animations for Add, Edit, and Delete buttons.
+
+📱 Responsive, clean look — adapts well to small screens.
